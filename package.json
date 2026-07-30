@@ -1,0 +1,48 @@
+{
+  "name": "ellucian-status-card",
+  "version": "1.0.0",
+  "description": "This is a status card to present the maintenance and system status for Ellucian products",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "lint": "npx eslint --ext .jsx,.js src",
+    "build-dev": "webpack --progress --mode development --env verbose",
+    "build-prod": "webpack --progress --mode production --env verbose",
+    "deploy-dev": "webpack --progress --mode development --env verbose --env upload",
+    "deploy-prod": "webpack --progress --mode production --env verbose --env upload",
+    "watch-and-upload": "webpack --hot --watch --mode development --env verbose --env upload --env forceUpload",
+    "start": "webpack serve --mode development --env verbose --env liveReload"
+  },
+  "dependencies": {
+    "@ellucian/ds-icons": "https://cdn.elluciancloud.com/assets/EDS2/8.4.0/umd/path_design_system_icons.tgz",
+    "@ellucian/experience-extension-utils": "https://cdn.elluciancloud.com/assets/SDK/utils/1.1.0/ellucian-experience-extension-utils-1.1.0.tgz",
+    "@ellucian/react-design-system": "https://cdn.elluciancloud.com/assets/EDS2/8.4.0/umd/path_design_system.tgz",
+    "react": "19.0.3",
+    "react-dom": "19.0.3",
+    "react-intl": "7.1.11",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "7.12.1",
+    "@babel/preset-env": "7.12.1",
+    "@babel/preset-react": "7.12.1",
+    "@ellucian/experience-extension": "https://cdn.elluciancloud.com/assets/SDK/8.1.2/ellucian-experience-extension-8.1.2.tgz",
+    "@eslint/js": "9.33.0",
+    "babel-plugin-rewire": "1.2.0",
+    "cross-env": "7.0.2",
+    "dotenv": "8.2.0",
+    "eslint": "9.33.0",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "webpack": "5.99.9",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.15.2"
+  },
+  "overrides": {
+    "@ellucian/react-design-system": {
+      "@tanstack/react-virtual": "3.11.3"
+    }
+  }
+}
